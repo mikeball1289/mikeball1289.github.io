@@ -10,7 +10,7 @@ box-sizing: border-box;
 padding: 300px  300px  70px  300px;
 overflow: hidden;
 ```
- - Once the page has loaded, instantiate the carousel by passing the container element to the constructor e.g. `carousel = new Carousel(document.querySelector('.carousel-container');`.
+ - Once the page has loaded, instantiate the carousel by passing the container element to the constructor e.g. `carousel = new Carousel(document.querySelector('.carousel-container'));`.
  - Finally, rotate the carousel to the element you want in the center by calling `carousel.focus(index);`, where `index` is the 0-based index number of the element to highlight.
 
 See a functional demo [here](https://mikeball1289.github.io/).
