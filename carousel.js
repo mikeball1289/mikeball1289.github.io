@@ -42,7 +42,7 @@ function Carousel(container, options = DEFAULT_OPTIONS) {
 }
 
 Carousel.prototype.debug = function(text) {
-  console.info(`[CAROUSEL] ${text}`);
+  if (this.options.debug) console.info(`[CAROUSEL] ${text}`);
 };
 
 Carousel.prototype.updateChildren = function() {
