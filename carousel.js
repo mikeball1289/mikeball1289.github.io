@@ -1,4 +1,4 @@
-const DEFAULT_OPTIONS = {};
+const DEFAULT_OPTIONS = { debug: false };
 const PI_2 = Math.PI * 2;
 const LINEAR = x => x;
 const easeOutSin = x => Math.sin((x * Math.PI) / 2);
@@ -10,6 +10,7 @@ const juggler = {
   tween: LINEAR,
   callback: undefined,
   play: (time, tickcb, tween = LINEAR) => {
+    if (isNaN(time) || time < 1) return;
     juggler.scheduledAt = Date.now();
     juggler.duration = time;
     juggler.callback = tickcb;
@@ -35,8 +36,14 @@ function Carousel(container, options = DEFAULT_OPTIONS) {
   this.container = container;
   this.elements = Array.from(container.children);
   this.rotation = 0;
+  this.options = options;
+  this.debug(`Creating a carousel with ${this.elements.length} elements.`)
   this.updateChildren();
 }
+
+Carousel.prototype.debug = function(text) {
+  console.info(`[CAROUSEL] ${text}`);
+};
 
 Carousel.prototype.updateChildren = function() {
   for (let i = 0; i < this.elements.length; i ++) {
@@ -56,11 +63,11 @@ function nRot(n) {
 }
 
 Carousel.prototype.focus = function(index) {
+  this.debug(`Focusing on element ${index}.`)
   this.rotation = nRot(this.rotation);
   const targetRot = index / this.elements.length;
   const diff = nRot(targetRot - this.rotation);
   const startRot = this.rotation;
-  console.log(startRot, diff);
   juggler.play(Math.abs(diff * 5000), p => {
     this.rotation = startRot + diff * p;
     this.updateChildren();

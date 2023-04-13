@@ -48,6 +48,8 @@ body {
 .carousel-element {
   width: 320px;
   height: 200px;
+  top: 0px;
+  left: 0px;
 }
 
 .el1 { background-color: red; }
