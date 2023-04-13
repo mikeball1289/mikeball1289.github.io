@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Carousel demo</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./carousel.css">
+    <script src="./carousel.js"></script>
+  </head>
+  <body>
+    <div class="section section-a"><span>Section A</span></div>
+    <div class="section section-b">
+      <div id="carousel-container" class="carousel-container">
+        <div class="carousel-element el1" onclick="carousel.focus(0)"></div>
+        <div class="carousel-element el2" onclick="carousel.focus(1)"></div>
+        <div class="carousel-element el3" onclick="carousel.focus(2)"></div>
+        <div class="carousel-element el4" onclick="carousel.focus(3)"></div>
+        <div class="carousel-element el5" onclick="carousel.focus(4)"></div>
+        <div class="carousel-element el6" onclick="carousel.focus(5)"></div>
+        <div class="carousel-element el7" onclick="carousel.focus(6)"></div>
+        <div class="carousel-element el8" onclick="carousel.focus(7)"></div>
+        <div class="carousel-element el9" onclick="carousel.focus(8)"></div>
+      </div>
+    </div>
+    <div class="section section-c"><span>Section B</span></div>
+    <script>
+      window.carousel = new Carousel(document.getElementById('carousel-container'));
+    </script>
+  </body>
+</html>

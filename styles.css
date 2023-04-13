@@ -1,0 +1,64 @@
+body {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.section {
+  width: 100%;
+  height: 800px;
+}
+
+.section-a {
+  background-color: lightseagreen;
+}
+
+.section-b {
+  box-sizing: border-box;
+  padding: 300px 300px 70px 300px;
+  overflow: hidden;
+}
+
+.section-c {
+  background-color: lightsalmon;
+}
+
+.section-a, .section-c {
+  font-size: clamp(60px, 20vw, 200px);;
+  text-align: center;
+  outline: dashed black 2px;
+  outline-offset: -10px;
+  position: relative;
+}
+
+.section > span {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+.carousel-container {
+  min-width: 970px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.carousel-element {
+  width: 320px;
+  height: 200px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.el1 { background-color: red; }
+.el2 { background-color: orange; }
+.el3 { background-color: yellow; }
+.el4 { background-color: lime; }
+.el5 { background-color: green; }
+.el6 { background-color: teal; }
+.el7 { background-color: blue; }
+.el8 { background-color: purple; }
+.el9 { background-color: pink; }
